@@ -2,6 +2,7 @@
 FROM python:3.12 as builder
 WORKDIR /build
 
+# Install pipx and setup the pipx app path
 RUN apt update && apt install --yes pipx && pipx ensurepath
 RUN pipx install git+https://github.com/Paperz-org/blitz.git@feature/replace-localhost --python $(which python)
 
