@@ -4,7 +4,7 @@ WORKDIR /build
 
 # Install pipx and setup the pipx app path
 RUN apt update && apt install --yes pipx && pipx ensurepath
-RUN pipx install git+https://github.com/Paperz-org/blitz.git@feature/replace-localhost --python $(which python)
+RUN pipx install git+https://github.com/Paperz-org/blitz.git@v0.2.0 --python $(which python)
 
 ENV BLITZ_READ_ONLY=true
 ENV PATH="/root/.local/bin:${PATH}"
